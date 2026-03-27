@@ -53,7 +53,7 @@ export default function Register() {
                         <input required type="password" onChange={(e) => { setForm({ ...Form, password: e.target.value }) }} className="bg-white w-70 h-10 text-black p-2 border rounded-2xl" placeholder="Enter your password" />
                         <button className="m-5 ml-18 h-8 w-30 bg-white text-black border rounded-3xl">Register</button>
                     </form>
-                    <p className="m-10">If you are already registed:<button onClick={() => { router.push("/login") }} className="text-blue-400">Login</button></p>
+                    <p className="m-10">If you are already registered:<button onClick={() => { router.push("/login") }} className="text-blue-400">Login</button></p>
                 </div>
             </div>
         </>

@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import toast from "react-hot-toast";
 
 export default function Login(){
 
@@ -22,8 +23,10 @@ export default function Login(){
 
         if(login.ok){
             router.push("/dashboard/recieved")
+            toast.success("Logged in Successfully!");
+            
         }else{
-            alert("Invalid details")
+            toast.error("Invalid Details");
         }
 
     }

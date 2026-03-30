@@ -3,6 +3,7 @@ import React from 'react'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import getUserFromToken from "../lib/auth"
+import toast from 'react-hot-toast'
 
 const Navbar = () => {
   const router = useRouter()
@@ -17,6 +18,8 @@ const Navbar = () => {
 
     if (log.ok) {
       router.push("/login");
+      toast.success("Logout Successfully!");
+
     }
   }
 

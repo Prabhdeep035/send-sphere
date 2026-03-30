@@ -71,7 +71,7 @@ export default function dashboard() {
 
     useEffect(() => {
         recievedEmail();
-    }, 3000)
+    }, [])
 
 
 
@@ -138,6 +138,7 @@ export default function dashboard() {
                                                 className="cursor-pointer flex flex-col gap-1"
                                                 onClick={() => {
                                                     markRead(mail._id);
+                                                    router.push(`/dashboard/mail/${mail._id}`)
                                                 }}
                                             >
                                                 <p className={`text-lg font-semibold ${mail.read && "opacity-50"}`}>
@@ -148,7 +149,7 @@ export default function dashboard() {
                                                     {mail.subject}
                                                 </p>
 
-                                                <p className={`text-sm text-gray-300 ${mail.read && "opacity-40 line-through"}`}>
+                                                <p className={`text-sm text-gray-300 ${mail.read && "opacity-40"}`}>
                                                     {mail.message}
                                                 </p>
                                             </div>

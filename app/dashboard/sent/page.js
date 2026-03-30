@@ -48,8 +48,8 @@ export default function dashboard() {
 
     useEffect(() => {
         emailSent()
-    }, 3000)
-
+        
+    }, [])
 
     return (
         <>
@@ -122,12 +122,16 @@ export default function dashboard() {
                                             className="flex gap-4 p-4 mb-4 bg-white/10 hover:bg-white/20 transition rounded-xl border border-white/10 shadow-md"
                                         >
 
-                                            {/* CONTENT */}
                                             <div
                                                 className="cursor-pointer flex flex-col gap-1"
-                                                onClick={() => router.push("/mail")}
+                                                onClick={() => router.push(`/dashboard/send/${mail._id}`)}
                                             >
+
                                                 <p className="text-lg font-semibold">
+                                                    {mail.reciever_id}
+                                                </p>
+
+                                                <p className="text-lg font-bold">
                                                     {mail.subject}
                                                 </p>
 
@@ -136,7 +140,6 @@ export default function dashboard() {
                                                 </p>
                                             </div>
 
-                                            {/* ACTIONS */}
                                             <div className="ml-auto flex items-center gap-3">
 
                                                 <button

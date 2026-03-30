@@ -3,6 +3,7 @@ import { isElementAccessExpression, isTemplateExpression } from "typescript"
 import { useRouter } from "next/navigation"
 import Navbar from "../../../components/Navbar"
 import { useState, useEffect } from "react"
+import toast from "react-hot-toast"
 
 export default function dashboard() {
 
@@ -22,7 +23,7 @@ export default function dashboard() {
             body: JSON.stringify(Form)
         })
         if(res.ok){
-            alert(`Mail sent to ${Form.email}`)
+            toast.success("Message sent successfully!");
             setForm({email:"",subject:"",message:""})
         }
     }

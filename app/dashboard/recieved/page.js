@@ -71,7 +71,7 @@ export default function dashboard() {
 
     useEffect(() => {
         recievedEmail();
-    }, [])
+    }, 3000)
 
 
 

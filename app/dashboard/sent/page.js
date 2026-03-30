@@ -48,7 +48,7 @@ export default function dashboard() {
 
     useEffect(() => {
         emailSent()
-    }, [])
+    }, 3000)
 
 
     return (

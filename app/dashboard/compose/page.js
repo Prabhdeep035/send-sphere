@@ -21,6 +21,10 @@ export default function dashboard() {
             },
             body: JSON.stringify(Form)
         })
+        if(res.ok){
+            alert(`Mail sent to ${Form.email}`)
+            setForm({email:"",subject:"",message:""})
+        }
     }
 
     return (

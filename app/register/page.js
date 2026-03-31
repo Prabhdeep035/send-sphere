@@ -19,7 +19,7 @@ export default function Register() {
             body: JSON.stringify(Form),
         });
         if (res.ok) {
-            toast.success("Registered Successfully");
+            toast.success(`Registered as ${Form.email}`);
             router.push("/login");
         } else {
             toast.error("Server Error");
@@ -38,12 +38,12 @@ export default function Register() {
                             <input
                                 required
                                 onChange={(e) => {
-                                    const value = e.target.value.toLowerCase().replace(/\s+/g, "");
+                                    const value = e.target.value.toLowerCase().replace(/\s+/g, "").split('@')[0];
                                     setForm({ ...Form, email: `${value}@sendsphere.com` });
                                 }}
                                 type="text"
                                 className="flex-1 h-full p-2 w-40 outline-none bg-transparent rounded-l-2xl"
-                                placeholder="Enter your email"
+                                placeholder="Enter your mail header"
                             />
 
                             <div className=" h-full flex items-center bg-gray-100 text-gray-600 text-sm whitespace-nowrap">

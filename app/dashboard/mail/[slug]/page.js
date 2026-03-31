@@ -3,6 +3,7 @@ import { useParams } from "next/navigation"
 import { useState, useEffect } from "react"
 import Navbar from "../../../../components/Navbar"
 import {useRouter} from "next/navigation"
+import toast from "react-hot-toast"
 
 export default function open(){
 
@@ -76,6 +77,20 @@ export default function open(){
                             <label className="text-sm text-gray-300">From</label>
                             <div className="flex gap-4 p-4 mb-4 bg-white/10 hover:bg-white/20 transition rounded-xl border border-white/10 shadow-md">
                                 {email}
+                                <button
+                                    onClick={async() => {await navigator.clipboard.writeText(email);
+                                        toast.success("Copied to clipboard")
+                                    }}
+                                    className="hover:scale-110 transition"
+                                >
+                                <lord-icon
+                                        src="https://cdn.lordicon.com/hmpomorl.json"
+                                        trigger="click"
+                                        state="hover-swipe"
+                                        colors="primary:#ffffff,secondary:#ffffff"
+                                        style={{ width: "28px", height: "28px" }}
+                                        />
+                                </button>
                             </div>
 
                             <label className="text-sm text-gray-300">Subject</label>
